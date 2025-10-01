@@ -43,14 +43,10 @@ while not game_over:
     # Move player
     keys = pygame.key.get_pressed()
     if keys[pygame.K_LEFT] and player_pos[0] > 0:
-        player_pos[0] -= random_int
+        player_pos[0] -= 10#random_int
     if keys[pygame.K_RIGHT] and player_pos[0] < WIDTH - player_size:
-        player_pos[0] += random_int2
-    '''if keys[pygame.K_DOWN] and player_pos[0] > 0:
-        player_pos[0] -= random_int
-    if keys[pygame.K_RIGHT] and player_pos[0] < HEIGHT - player_size:
-        player_pos[0] += random_int2
-'''
+        player_pos[0] += 10#random_int2
+
     # Move enemy
     enemy_pos[1] += enemy_speed
     if enemy_pos[1] > HEIGHT:
@@ -71,6 +67,6 @@ while not game_over:
     pygame.draw.rect(screen, GREEN, (enemy_pos[0], enemy_pos[1], enemy_size, enemy_size))
 
     pygame.display.flip()
-    clock.tick(30)
+    clock.tick(60)
 
 print("Game Over!")

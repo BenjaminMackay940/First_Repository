@@ -28,13 +28,18 @@ def run_game_screen():
                 pygame.quit()
                 sys.exit()
             elif event.type == pygame.KEYDOWN and event.key == pygame.K_SPACE:
-                game_running = False  # Return to main screen
+                game_running = False
 
         # Draw on the game screen
-        game_screen.fill(GREEN)
-        text = font.render("Game Screen - Press SPACE to go back", True, WHITE)
-        game_screen.blit(text, (50, HEIGHT//2 - 24))
+        game_screen.fill(BLACK)
+        text = font.render("Welcome to Hangman!", True, WHITE)
+        game_screen.blit(text, (210, HEIGHT//2 - 44))
+        text = font.render("(press SPACE to continue)", True, WHITE)
+        game_screen.blit(text, (185, HEIGHT // 2 - 2))
         pygame.display.flip()
+
+def main():
+    print("a")
 
 if __name__ == "__main__":
     run_game_screen()
